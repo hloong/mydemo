@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:orientation="vertical"
+    android:gravity="left"
+    android:minHeight="100dp">
+    <TextView 
+        android:id="@+id/tv_flight_airline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="海南航空2014"
+        android:textSize="16sp"
+        />
+    
+    <TextView 
+        android:id="@+id/tv_flight_from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/flight_lable_tv"
+        android:layout_alignBottom="@+id/flight_lable_tv"
+        android:text="北京"
+        android:textSize="16sp"
+        />
+    <TextView 
+        android:id="@+id/tv_flight_lable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="~"
+        android:textSize="16sp"
+        />
+    <TextView 
+        android:id="@+id/tv_flight_to"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:layout_toRightOf="@+id/flight_lable_tv"
+        android:layout_alignBottom="@+id/flight_lable_tv"
+        android:text="杭州"
+        android:textSize="16sp"
+        />
+
+</LinearLayout>

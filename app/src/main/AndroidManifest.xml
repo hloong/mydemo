@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hloong.mydemo" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.hloong.mydemo.activity.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.hloong.mydemo.activity.ChatActivity"></activity>
+        <activity android:name="com.hloong.mydemo.activity.SimpleListActivity"></activity>
+        <activity android:name="com.hloong.mydemo.activity.ListGridViewActivity"></activity>
+        <activity android:name="com.hloong.mydemo.activity.CircleBarActivity"></activity>
+        <activity android:name="com.hloong.mydemo.activity.MultiListActivity"></activity>
+        <activity android:name="com.hloong.mydemo.activity.GraphViewActivity"></activity>
+        <activity android:name="com.hloong.mydemo.activity.ChenJinShiActivity"></activity>
+
+    </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+</manifest>
