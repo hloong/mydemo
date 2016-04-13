@@ -1,13 +1,16 @@
 package com.hloong.mydemo.activity;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.hloong.mydemo.BaseActivity;
 import com.hloong.mydemo.R;
+import com.hloong.mydemo.widget.MyPointDialog;
 
 public class MainActivity extends BaseActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +23,6 @@ public class MainActivity extends BaseActivity {
         getView(R.id.btn_two_side_circle).setOnClickListener(l);
         getView(R.id.btn_form).setOnClickListener(l);
         getView(R.id.btn_chenjinshi).setOnClickListener(l);
-
     }
     
     
