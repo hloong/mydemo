@@ -1,4 +1,4 @@
-package com.hloong.mydemo.widget;
+package com.hloong.mydemo.ui;
 
 import android.content.Context;
 import android.graphics.Canvas;

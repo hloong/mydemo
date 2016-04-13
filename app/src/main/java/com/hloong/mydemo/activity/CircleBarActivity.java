@@ -6,8 +6,8 @@ import android.view.View.OnClickListener;
 
 import com.hloong.mydemo.BaseActivity;
 import com.hloong.mydemo.R;
-import com.hloong.mydemo.widget.CircleBar;
-import com.hloong.mydemo.widget.CircleBarTwoSider;
+import com.hloong.mydemo.ui.CircleBar;
+import com.hloong.mydemo.ui.CircleBarTwoSider;
 
 public class CircleBarActivity extends BaseActivity {
     private CircleBarTwoSider circleBar;

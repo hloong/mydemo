@@ -23,6 +23,7 @@
         <activity android:name="com.hloong.mydemo.activity.MultiListActivity"></activity>
         <activity android:name="com.hloong.mydemo.activity.GraphViewActivity"></activity>
         <activity android:name="com.hloong.mydemo.activity.ChenJinShiActivity"></activity>
+        <activity android:name="com.hloong.mydemo.activity.ScaleActivity"></activity>
 
     </application>
     <uses-permission android:name="android.permission.INTERNET"/>
