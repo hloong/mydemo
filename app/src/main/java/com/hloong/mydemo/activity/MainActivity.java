@@ -61,7 +61,7 @@ public class MainActivity extends BaseActivity {
                 openActivity(ScaleActivity.class);
                 break;
             case R.id.btn_photo:
-                openActivity(ScaleActivity.class);
+                openActivity(PhotoActivity.class);
                 break;
             default:
                 break;
