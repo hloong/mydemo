@@ -23,10 +23,8 @@ public class MainActivity extends BaseActivity {
         getView(R.id.btn_two_side_circle).setOnClickListener(l);
         getView(R.id.btn_form).setOnClickListener(l);
         getView(R.id.btn_chenjinshi).setOnClickListener(l);
-<<<<<<< Temporary merge branch 1
-=======
         getView(R.id.btn_scale).setOnClickListener(l);
->>>>>>> Temporary merge branch 2
+        getView(R.id.btn_photo).setOnClickListener(l);
     }
     
     
@@ -60,6 +58,9 @@ public class MainActivity extends BaseActivity {
                 openActivity(ChenJinShiActivity.class);
                 break;
             case R.id.btn_scale:
+                openActivity(ScaleActivity.class);
+                break;
+            case R.id.btn_photo:
                 openActivity(ScaleActivity.class);
                 break;
             default:
