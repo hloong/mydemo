@@ -8,7 +8,6 @@ import com.hloong.mydemo.BaseActivity;
 import com.hloong.mydemo.R;
 
 public class MainActivity extends BaseActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +20,8 @@ public class MainActivity extends BaseActivity {
         getView(R.id.btn_two_side_circle).setOnClickListener(l);
         getView(R.id.btn_form).setOnClickListener(l);
         getView(R.id.btn_chenjinshi).setOnClickListener(l);
-        getView(R.id.btn_scale).setOnClickListener(l);
+        getView(R.id.btn_photo).setOnClickListener(l);
+
     }
     
     
@@ -54,8 +54,8 @@ public class MainActivity extends BaseActivity {
             case R.id.btn_chenjinshi:
                 openActivity(ChenJinShiActivity.class);
                 break;
-            case R.id.btn_scale:
-                openActivity(ScaleActivity.class);
+            case R.id.btn_photo:
+                openActivity(PhotoActivity.class);
                 break;
             default:
                 break;

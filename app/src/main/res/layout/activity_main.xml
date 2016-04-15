@@ -81,5 +81,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="缩放图片Maxtri测试" />
+    <Button
+        android:id="@+id/btn_photo"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="微信头像上传" />
 	</LinearLayout>
 </ScrollView>

@@ -1,12 +1,11 @@
 package com.hloong.mydemo;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
-
-import com.hloong.mydemo.ui.MyPointDialog;
 
 public class BaseActivity extends AppCompatActivity {
     
@@ -14,29 +13,12 @@ public class BaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
-        showDialog();
+
     }
-
-    /**
-     * 显示
-     */
-    private void showDialog(){
-        final MyPointDialog dialog = new MyPointDialog(this);
-        dialog.setCanceledOnTouchOutside(false);
-        dialog.show();
-
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                dialog.cancel();
-            }
-        },2000);
-    }
-
     /**
      * 省掉findViewById
-     * @param  布局id
-     * @return findviewbyid
+     * @param viewId
+     * @return
      */
     public <T extends View> T getView(int viewId) {
         return (T)this.findViewById(viewId);
