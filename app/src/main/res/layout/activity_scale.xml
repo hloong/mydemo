@@ -3,15 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white" >
-
-
     <com.hloong.mydemo.ui.ZoomImageView
         android:id="@+id/iv_zoom"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:src="@drawable/zoom"
         android:scaleType="matrix"/>
-
-
-
 </RelativeLayout>
