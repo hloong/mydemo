@@ -16,7 +16,7 @@ import android.widget.RelativeLayout;
 public class ClipImageLayout extends RelativeLayout {
 	private ClipZoomImageView mZoomImageView;
 	private ClipImageBorderView mClipImageView;
-	private int mHorizontalPadding = 20;// 框左右的边距，这里左右边距为0，为�?��屏幕宽度的正方形�?
+	private int mHorizontalPadding = 20;// 框左右的边距，这里左右边距为0，为屏幕宽度的正方形
 
 	public ClipImageLayout(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -48,8 +48,8 @@ public class ClipImageLayout extends RelativeLayout {
 	}
 
 	/**
-	 * 对外公布设置边距的方�?单位为dp
-	 * 
+	 * 对外公布设置边距的单位为dp
+	 *
 	 * @param mHorizontalPadding
 	 */
 	public void setHorizontalPadding(int mHorizontalPadding) {
@@ -58,7 +58,7 @@ public class ClipImageLayout extends RelativeLayout {
 
 	/**
 	 * 裁切图片
-	 * 
+	 *
 	 * @return
 	 */
 	public Bitmap clip() {

@@ -34,24 +34,24 @@ public class ClipZoomImageView extends ImageView implements
 	private static float SCALE_MID = 2.0f;
 
 	/**
-	 * 初始化时的缩放比例，如果图片宽或高大于屏幕，此�?将小�?
+	 * 初始化时的缩放比例，如果图片宽或高大于屏幕，此值将小于0
 	 */
 	private float initScale = 1.0f;
 	private boolean once = true;
 
 	/**
-	 * 用于存放矩阵�?个�?
+	 * 用于存放矩阵的9个值
 	 */
 	private final float[] matrixValues = new float[9];
 
 	/**
-	 * 缩放的手势检�?
+	 * 缩放的手势检测
 	 */
 	private ScaleGestureDetector mScaleGestureDetector = null;
 	private final Matrix mScaleMatrix = new Matrix();
 
 	/**
-	 * 用于双击�?��
+	 * 用于双击检测
 	 */
 	private GestureDetector mGestureDetector;
 	private boolean isAutoScale;
@@ -64,9 +64,10 @@ public class ClipZoomImageView extends ImageView implements
 	private boolean isCanDrag;
 	private int lastPointerCount;
 	/**
-	 * 水平方向与View的边�?
+	 * 水平方向与View的边距
 	 */
 	private int mHorizontalPadding;
+
 
 	public ClipZoomImageView(Context context) {
 		this(context, null);
@@ -103,8 +104,8 @@ public class ClipZoomImageView extends ImageView implements
 	}
 
 	/**
-	 * 自动缩放的任�?
-	 * 
+	 * 自动缩放
+	 *
 	 */
 	private class AutoScaleRunnable implements Runnable {
 		static final float BIGGER = 1.07f;
@@ -113,14 +114,14 @@ public class ClipZoomImageView extends ImageView implements
 		private float tmpScale;
 
 		/**
-		 * 缩放的中�?
+		 * 缩放的中心
 		 */
 		private float x;
 		private float y;
 
 		/**
 		 * 传入目标缩放值，根据目标值与当前值，判断应该放大还是缩小
-		 * 
+		 *
 		 * @param targetScale
 		 */
 		public AutoScaleRunnable(float targetScale, float x, float y) {
@@ -169,12 +170,12 @@ public class ClipZoomImageView extends ImageView implements
 			return true;
 
 		/**
-		 * 缩放的范围控�?
+		 * 缩放的范围控制
 		 */
 		if ((scale < SCALE_MAX && scaleFactor > 1.0f)
 				|| (scale > initScale && scaleFactor < 1.0f)) {
 			/**
-			 * �?��值最小�?判断
+			 * 最大值最小值判断
 			 */
 			if (scaleFactor * scale < initScale) {
 				scaleFactor = initScale / scale;
@@ -194,8 +195,8 @@ public class ClipZoomImageView extends ImageView implements
 	}
 
 	/**
-	 * 根据当前图片的Matrix获得图片的范�?
-	 * 
+	 * 根据当前图片的Matrix获得图片的范围
+	 *
 	 * @return
 	 */
 	private RectF getMatrixRectF() {
@@ -227,7 +228,7 @@ public class ClipZoomImageView extends ImageView implements
 		float x = 0, y = 0;
 		// 拿到触摸点的个数
 		final int pointerCount = event.getPointerCount();
-		// 得到多个触摸点的x与y均�?
+		// 得到多个触摸点的x与y坐标值
 		for (int i = 0; i < pointerCount; i++) {
 			x += event.getX(i);
 			y += event.getY(i);
@@ -246,48 +247,48 @@ public class ClipZoomImageView extends ImageView implements
 
 		lastPointerCount = pointerCount;
 		switch (event.getAction()) {
-		case MotionEvent.ACTION_MOVE:
-			float dx = x - mLastX;
-			float dy = y - mLastY;
+			case MotionEvent.ACTION_MOVE:
+				float dx = x - mLastX;
+				float dy = y - mLastY;
 
-			if (!isCanDrag) {
-				isCanDrag = isCanDrag(dx, dy);
-			}
-			if (isCanDrag) {
-				if (getDrawable() != null) {
-
-					RectF rectF = getMatrixRectF();
-					// 如果宽度小于屏幕宽度，则禁止左右移动
-					if (rectF.width() <= getWidth() - mHorizontalPadding * 2) {
-						dx = 0;
-					}
-
-					// 如果高度小雨屏幕高度，则禁止上下移动
-					if (rectF.height() <= getHeight() - getHVerticalPadding()
-							* 2) {
-						dy = 0;
-					}
-					mScaleMatrix.postTranslate(dx, dy);
-					checkBorder();
-					setImageMatrix(mScaleMatrix);
+				if (!isCanDrag) {
+					isCanDrag = isCanDrag(dx, dy);
 				}
-			}
-			mLastX = x;
-			mLastY = y;
-			break;
+				if (isCanDrag) {
+					if (getDrawable() != null) {
 
-		case MotionEvent.ACTION_UP:
-		case MotionEvent.ACTION_CANCEL:
-			lastPointerCount = 0;
-			break;
+						RectF rectF = getMatrixRectF();
+						// 如果宽度小于屏幕宽度，则禁止左右移动
+						if (rectF.width() <= getWidth() - mHorizontalPadding * 2) {
+							dx = 0;
+						}
+
+						// 如果高度小雨屏幕高度，则禁止上下移动
+						if (rectF.height() <= getHeight() - getHVerticalPadding()
+								* 2) {
+							dy = 0;
+						}
+						mScaleMatrix.postTranslate(dx, dy);
+						checkBorder();
+						setImageMatrix(mScaleMatrix);
+					}
+				}
+				mLastX = x;
+				mLastY = y;
+				break;
+
+			case MotionEvent.ACTION_UP:
+			case MotionEvent.ACTION_CANCEL:
+				lastPointerCount = 0;
+				break;
 		}
 
 		return true;
 	}
 
 	/**
-	 * 获得当前的缩放比�?
-	 * 
+	 * 获得当前的缩放比
+	 *
 	 * @return
 	 */
 	public final float getScale() {
@@ -308,7 +309,7 @@ public class ClipZoomImageView extends ImageView implements
 	}
 
 	/**
-	 * 垂直方向与View的边�?
+	 * 垂直方向与View的边距
 	 */
 	// private int getHVerticalPadding();
 
@@ -318,7 +319,7 @@ public class ClipZoomImageView extends ImageView implements
 			Drawable d = getDrawable();
 			if (d == null)
 				return;
-			// 垂直方向的边�?
+			// 垂直方向的边距
 			// getHVerticalPadding() = (getHeight() - (getWidth() - 2 *
 			// mHorizontalPadding)) / 2;
 
@@ -342,7 +343,7 @@ public class ClipZoomImageView extends ImageView implements
 				scale = Math.max(scaleW, scaleH);
 			}
 
-			// 太小的图片放大处�?
+			// 太小的图片放大处理
 			if (drawableW < frameSize && drawableH > frameSize) {
 				scale = 1.0f * frameSize / drawableW;
 			} else if (drawableH < frameSize && drawableW > frameSize) {
@@ -361,7 +362,7 @@ public class ClipZoomImageView extends ImageView implements
 			mScaleMatrix.postScale(scale, scale, getWidth() / 2,
 					getHeight() / 2);
 
-			// 图片移动至屏幕中�?
+			// 图片移动至屏幕中间
 			setImageMatrix(mScaleMatrix);
 			once = false;
 		}
@@ -369,21 +370,21 @@ public class ClipZoomImageView extends ImageView implements
 
 	/**
 	 * 剪切图片，返回剪切后的bitmap对象
-	 * 
+	 *
 	 * @return
 	 */
 	public Bitmap clip() {
 		Bitmap bitmap = Bitmap.createBitmap(getWidth(), getHeight(),Bitmap.Config.ARGB_8888);
 		//将剪裁的图片压缩到500k以下，如果没需求就注释该段代码
-		ByteArrayOutputStream baos = new ByteArrayOutputStream(); 
-	        int options = 100;//保存的图片自动压缩低于500k
-	        bitmap.compress(Bitmap.CompressFormat.JPEG, options, baos);  
-	        while (baos.toByteArray().length / 1024 > 500) {   
-	            baos.reset();  
-	            options -= 10;  
-	            bitmap.compress(Bitmap.CompressFormat.JPEG, options, baos);  
-	    } 
-	        
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		int options = 100;//保存的图片自动压缩低于500k
+		bitmap.compress(Bitmap.CompressFormat.JPEG, options, baos);
+		while (baos.toByteArray().length / 1024 > 500) {
+			baos.reset();
+			options -= 10;
+			bitmap.compress(Bitmap.CompressFormat.JPEG, options, baos);
+		}
+
 		Canvas canvas = new Canvas(bitmap);
 		draw(canvas);
 		return Bitmap.createBitmap(bitmap, mHorizontalPadding,
@@ -392,7 +393,7 @@ public class ClipZoomImageView extends ImageView implements
 	}
 
 	/**
-	 * 边界�?��
+	 * 边界边框
 	 */
 	private void checkBorder() {
 		RectF rect = getMatrixRectF();
@@ -402,7 +403,7 @@ public class ClipZoomImageView extends ImageView implements
 		int width = getWidth();
 		int height = getHeight();
 
-		// 如果宽或高大于屏幕，则控制范�?; 这里�?.001是因为精度丢失会产生问题，但是误差一般很小，�?��我们直接加了�?��0.01
+		//  如果宽或高大于屏幕，则控制范围 ; 这里的0.001是因为精度丢失会产生问题，但是误差一般很小，所以我们直接加了一个0.01
 		if (rect.width() + 0.01 >= width - 2 * mHorizontalPadding) {
 			if (rect.left > mHorizontalPadding) {
 				deltaX = -rect.left + mHorizontalPadding;
@@ -427,8 +428,8 @@ public class ClipZoomImageView extends ImageView implements
 	}
 
 	/**
-	 * 是否是拖动行�?
-	 * 
+	 * 是否处于拖动状态
+	 *
 	 * @param dx
 	 * @param dy
 	 * @return

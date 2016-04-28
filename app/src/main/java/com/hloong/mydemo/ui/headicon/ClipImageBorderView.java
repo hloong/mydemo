@@ -73,7 +73,7 @@ public class ClipImageBorderView extends View {
 		// 绘制下边4
 		canvas.drawRect(mHorizontalPadding, getHeight() - mVerticalPadding,
 				getWidth() - mHorizontalPadding, getHeight(), mPaint);
-		// 绘制外边�?
+		// 绘制外边框
 		mPaint.setColor(mBorderColor);
 		mPaint.setStrokeWidth(mBorderWidth);
 		mPaint.setStyle(Style.STROKE);
