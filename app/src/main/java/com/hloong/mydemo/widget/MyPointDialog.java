@@ -9,7 +9,6 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
 import com.hloong.mydemo.R;
-import com.hloong.mydemo.util.Utils;
 
 import java.util.ArrayList;
 import java.util.List;

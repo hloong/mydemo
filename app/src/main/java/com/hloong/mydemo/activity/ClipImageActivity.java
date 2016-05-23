@@ -1,10 +1,6 @@
 package com.hloong.mydemo.activity;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -12,14 +8,18 @@ import android.graphics.Matrix;
 import android.media.ExifInterface;
 import android.os.Bundle;
 import android.os.Environment;
-import android.app.Activity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.hloong.mydemo.BaseActivity;
 import com.hloong.mydemo.R;
 import com.hloong.mydemo.ui.headicon.ClipImageLayout;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 
 /**
@@ -52,6 +52,7 @@ public class ClipImageActivity extends Activity{
 				mClipImageLayout.setImageBitmap(rotateBitmap(degreee, bitmap));
 			}
 		} else {
+			Toast.makeText(this,"选择的图片为空，请确认是否有此图片",Toast.LENGTH_LONG).show();
 			finish();
 		}
 	}
@@ -96,8 +97,9 @@ public class ClipImageActivity extends Activity{
 			e1.printStackTrace();
 		} finally {
 			try {
-				if (fOut != null)
+				if (fOut != null) {
 					fOut.close();
+				}
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

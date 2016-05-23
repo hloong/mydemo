@@ -2,6 +2,8 @@ package com.hloong.mydemo.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -11,11 +13,13 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.hloong.mydemo.R;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.List;
 
 /**
  * http://blog.csdn.net/lmj623565791/article/details/39761281
@@ -56,8 +60,14 @@ public class PhotoActivity extends Activity {
                     break;
                 case R.id.btn_camera:
                     Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                    intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(getFile()));
-                    startActivityForResult(intent, CAMERA);
+                    List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
+                    if (list.size() > 0) {//判断系统中是否存在可以启动的相机应用
+                        intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(getFile()));
+                        startActivityForResult(intent, CAMERA);
+                    }else {//如果系统不存在相机调用
+                        Toast.makeText(PhotoActivity.this,"您手机无可调用的相机程序",Toast.LENGTH_LONG).show();
+                        return;
+                    }
                     break;
             }
         }

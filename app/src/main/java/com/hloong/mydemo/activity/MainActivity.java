@@ -1,13 +1,20 @@
 package com.hloong.mydemo.activity;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.hloong.mydemo.BaseActivity;
 import com.hloong.mydemo.R;
-import com.hloong.mydemo.widget.MyPointDialog;
+
+import java.io.IOException;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.FormBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class MainActivity extends BaseActivity {
 
@@ -68,4 +75,53 @@ public class MainActivity extends BaseActivity {
             }
         }
     };
+
+
+
+    private void getUrl(){
+        //创建okHttpClient对象
+        OkHttpClient mOkHttpClient = new OkHttpClient();
+        //创建一个Request
+        final Request request = new Request.Builder()
+                .url("http://op.juhe.cn/shanghai/police")
+                .build();
+        //new call
+        Call call = mOkHttpClient.newCall(request);
+        //请求加入调度
+        call.enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+
+            }
+        });
+
+    }
+
+
+    private void postUrl(){
+
+
+        FormBody.Builder builder = new FormBody.Builder();
+
+        Request request = new Request.Builder()
+                .url("http://op.juhe.cn/shanghai/police")
+                .post(builder.build())
+                .build();
+        new OkHttpClient().newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+
+            }
+        });
+    }
 }
