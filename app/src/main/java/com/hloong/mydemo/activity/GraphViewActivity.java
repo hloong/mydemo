@@ -14,7 +14,7 @@ import com.hloong.mydemo.graphview.GraphView.GraphViewData;
 import com.hloong.mydemo.graphview.GraphViewSeries;
 import com.hloong.mydemo.graphview.GraphViewSeries.GraphViewSeriesStyle;
 import com.hloong.mydemo.graphview.LineGraphView;
-import com.hloong.mydemo.util.Utils;
+import com.hloong.mydemo.util.DisplayUtils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -71,11 +71,11 @@ public class GraphViewActivity extends BaseActivity {
      // 隐藏y轴标签
         graphView.setShowVerticalLabels(false);  
         // 字号
-        graphView.getGraphViewStyle().setTextSize(Utils.sp2px(this, 8));
+        graphView.getGraphViewStyle().setTextSize(DisplayUtils.sp2px(this, 8));
         // 图标利率数值字号    
-        graphView.getGraphViewStyle().setTextSizeDot(Utils.sp2px(this, 15));
+        graphView.getGraphViewStyle().setTextSizeDot(DisplayUtils.sp2px(this, 15));
         graphView.getGraphViewStyle().setVerticalLabelsAlign(Align.RIGHT);
-        graphView.getGraphViewStyle().setVerticalLabelsWidth(Utils.sp2px(this, 37));
+        graphView.getGraphViewStyle().setVerticalLabelsWidth(DisplayUtils.sp2px(this, 37));
         graphView.addSeries(exampleSeries);
  
         final SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd", Locale.CHINESE);

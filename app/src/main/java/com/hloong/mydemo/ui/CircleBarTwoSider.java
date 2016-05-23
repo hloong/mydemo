@@ -13,7 +13,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 
-import com.hloong.mydemo.util.Utils;
+import com.hloong.mydemo.util.DisplayUtils;
 
 public class CircleBarTwoSider extends View {
     private RectF mColorWheelRectangle = new RectF();//圆圈的矩形范围
@@ -51,9 +51,9 @@ public class CircleBarTwoSider extends View {
 
     
     private void init(AttributeSet attrs, int defStyle) {
-        circleStrokeWidth = Utils.dip2px(getContext(), 10);
-        pressExtraStrokeWidth = Utils.dip2px(getContext(), 2);
-        mTextSize = Utils.dip2px(getContext(), 20);
+        circleStrokeWidth = DisplayUtils.dip2px(getContext(), 10);
+        pressExtraStrokeWidth = DisplayUtils.dip2px(getContext(), 2);
+        mTextSize = DisplayUtils.dip2px(getContext(), 20);
                                                                           
         mColorWheelPaintRight = new Paint(Paint.ANTI_ALIAS_FLAG);
         mColorWheelPaintRight.setColor(0xFF29a6f6);
