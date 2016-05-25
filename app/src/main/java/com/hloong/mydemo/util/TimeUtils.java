@@ -1,7 +1,6 @@
 package com.hloong.mydemo.util;
 
 import android.annotation.SuppressLint;
-import android.text.format.Time;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -188,12 +187,12 @@ public class TimeUtils {
     /**
      * 从时间戳转换为字符(转换成yyyy/MM/dd)
      * 
-     * @param strDate
+     * @param milliseconds
      * @return
      */
     public static String timeStampToString(String milliseconds) {
         Date dataValue = new Date(0, 0, 1);
-        if (StringHelper.isEmpty(milliseconds))
+        if (StringUtil.isEmpty(milliseconds))
             milliseconds = String.valueOf(dataValue.getTime());
         
         long tempTime = 0;
@@ -210,12 +209,12 @@ public class TimeUtils {
     /**
      * 从时间戳转换为字符(转换成yyyy-MM-dd HH:mm:ss)
      * 
-     * @param strDate
+     * @param milliseconds
      * @return
      */
     public static String timeStampToyMdHms(String milliseconds) {
         Date dataValue = new Date(0, 0, 1);
-        if (StringHelper.isEmpty(milliseconds))
+        if (StringUtil.isEmpty(milliseconds))
             milliseconds = String.valueOf(dataValue.getTime());
         
         long tempTime = 0;
