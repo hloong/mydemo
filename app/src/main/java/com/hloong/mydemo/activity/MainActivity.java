@@ -83,7 +83,7 @@ public class MainActivity extends BaseActivity {
         OkHttpClient mOkHttpClient = new OkHttpClient();
         //创建一个Request
         final Request request = new Request.Builder()
-                .url("http://op.juhe.cn/shanghai/police")
+                .url("http://op.juhe.cn/shanghai/police?key=4ceeff4e2486d39a40df48f3118e5a9c")
                 .build();
         //new call
         Call call = mOkHttpClient.newCall(request);

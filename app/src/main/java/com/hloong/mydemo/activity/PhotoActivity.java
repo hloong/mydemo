@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.hloong.mydemo.R;
+import com.hloong.mydemo.image.ImageLoader;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -34,7 +35,7 @@ public class PhotoActivity extends Activity {
     public static final String IMAGE_FILE_NAME = "clip_temp.jpg";
     public static final String RESULT_PATH = "result_path";
     public static final String PASS_PATH = "pass_path";
-
+    private ImageView imageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +43,8 @@ public class PhotoActivity extends Activity {
 
         findViewById(R.id.btn_local).setOnClickListener(l);
         findViewById(R.id.btn_camera).setOnClickListener(l);
+        imageView = (ImageView) findViewById(R.id.iv);
+        new ImageLoader().displayImage("http://www.jcodecraeer.com/uploads/allimg/160510/1_1155023781.png",imageView);
     }
 
     View.OnClickListener l = new View.OnClickListener() {
@@ -96,7 +99,6 @@ public class PhotoActivity extends Activity {
             case CUT:
                 String path = data.getStringExtra(RESULT_PATH);
                 Bitmap photo = BitmapFactory.decodeFile(path);
-                ImageView imageView = (ImageView) findViewById(R.id.iv);
                 imageView.setImageBitmap(photo);
                 //在此处来做图片的上传处理
 
