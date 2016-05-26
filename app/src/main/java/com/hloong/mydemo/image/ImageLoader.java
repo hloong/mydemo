@@ -2,7 +2,6 @@ package com.hloong.mydemo.image;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.util.LruCache;
 import android.widget.ImageView;
 
 import java.net.HttpURLConnection;
@@ -14,29 +13,47 @@ import java.util.concurrent.Executors;
  * Created by Administrator on 2016/5/26.
  */
 public class ImageLoader {
+    public static ImageLoader imageLoader = null;
+    public static ImageLoader getInstance(){
+        if (imageLoader == null) {
+            synchronized (ImageLoader.class){
+                if (imageLoader == null) {
+                    imageLoader = new ImageLoader();
+                }
+            }
+        }
+        return imageLoader;
+    }
+    public ImageLoader(){
+
+    }
+
+
     //图片缓存
-    LruCache<String,Bitmap> mImageCache;
+    ImageCache mImageCache = new MemoryCache();
+
+    public void setImageCache(ImageCache cache){
+        mImageCache = cache;
+    }
     //线程池，线程数量为CPU的数量
     ExecutorService mExecutorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
 
-    public ImageLoader(){
-        initImageCache();
-    }
-
-    private void initImageCache() {
-        //计算可使用的最大内存
-        final int maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1024);
-        //取四分之一的可用内存为缓存
-        final int cacheSize = maxMemory / 4;
-        mImageCache = new LruCache<String , Bitmap>(cacheSize){
-            @Override
-            protected int sizeOf(String key, Bitmap value) {
-                return value.getRowBytes() * value.getHeight() / 1024;
-            }
-        };
-    }
-
     public void displayImage(final String url, final ImageView imageView){
+        Bitmap  bitmap = mImageCache.get(url);
+        if (bitmap != null){
+            imageView.setImageBitmap(bitmap);
+            return;
+        }
+        submitLoadRequest(url, imageView);
+
+    }
+
+    /**
+     * 图片没缓存，提交到线程池中下载图片
+     * @param url
+     * @param imageView
+     */
+    private void submitLoadRequest(final String url, final ImageView imageView) {
         imageView.setTag(url);
         mExecutorService.submit(new Runnable() {
             @Override
@@ -51,7 +68,6 @@ public class ImageLoader {
                 mImageCache.put(url,bitmap);//缓存
             }
         });
-
     }
 
     private Bitmap downloadImage(String imageUrl) {
@@ -66,6 +82,5 @@ public class ImageLoader {
         }
         return bitmap;
     }
-
 
 }

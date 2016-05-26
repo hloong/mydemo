@@ -44,7 +44,24 @@ public class PhotoActivity extends Activity {
         findViewById(R.id.btn_local).setOnClickListener(l);
         findViewById(R.id.btn_camera).setOnClickListener(l);
         imageView = (ImageView) findViewById(R.id.iv);
-        new ImageLoader().displayImage("http://www.jcodecraeer.com/uploads/allimg/160510/1_1155023781.png",imageView);
+
+//        ImageLoader imageLoader = new ImageLoader();
+//        imageLoader.setImageCache(new DoubleCache());//使用双缓存
+//        imageLoader.setImageCache(new DiskCache());//使用sd卡缓存
+//        imageLoader.setImageCache(new MemoryCache());//使用内存缓存
+//        imageLoader.setImageCache(new ImageCache() {//使用自定义缓存
+//            @Override
+//            public void put(String url, Bitmap bitmap) {
+//
+//            }
+//
+//            @Override
+//            public Bitmap get(String url) {
+//                return null;
+//            }
+//        });
+
+        ImageLoader.getInstance().displayImage("http://www.jcodecraeer.com/uploads/allimg/160510/1_1155023781.png",imageView);
     }
 
     View.OnClickListener l = new View.OnClickListener() {
