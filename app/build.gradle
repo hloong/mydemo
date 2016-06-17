@@ -8,6 +8,7 @@ android {
         applicationId "com.hloong.mydemo"
         minSdkVersion 12
         targetSdkVersion 23
+        useLibrary 'org.apache.http.legacy'
         versionCode 1
         versionName "1.0"
     }
