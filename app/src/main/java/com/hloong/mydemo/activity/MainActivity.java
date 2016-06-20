@@ -4,7 +4,6 @@ import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.text.Html;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
@@ -160,14 +159,13 @@ public class MainActivity extends BaseActivity {
     private void sendStringRequest() {
         final ProgressDialog dialog = new ProgressDialog(this);
         dialog.show();
-        StringRequest request = new StringRequest(HttpMethod.GET, url,
+        StringRequest request = new StringRequest(HttpMethod.GET, "http://www.baidu.com",
                 new RequestListener<String>() {
 
                     @Override
                     public void onComplete(int stCode, String response, String errMsg) {
-//                        mResultTv.setText(Html.fromHtml(response));
                         dialog.cancel();
-                        textView.setText(Html.fromHtml(response));
+                        textView.setText(response);
                     }
                 });
 
