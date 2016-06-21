@@ -17,6 +17,7 @@ import com.hloong.mydemo.net.Request.RequestListener;
 import com.hloong.mydemo.net.RequestQueue;
 import com.hloong.mydemo.net.SimpleNet;
 import com.hloong.mydemo.net.StringRequest;
+import com.hloong.mydemo.universal.AppImageLoader;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -35,6 +36,8 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        AppImageLoader.initImageLoader(this);
+
         setContentView(R.layout.activity_main);
         textView =(TextView)findViewById(R.id.tv);
         textView.setOnClickListener(l);

@@ -16,7 +16,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.hloong.mydemo.R;
-import com.hloong.mydemo.image.ImageLoader;
+import com.hloong.mydemo.universal.AppImageLoader;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -61,7 +61,10 @@ public class PhotoActivity extends Activity {
 //            }
 //        });
 
-        ImageLoader.getInstance().displayImage("http://www.jcodecraeer.com/uploads/allimg/160510/1_1155023781.png",imageView);
+//        ImageLoader.getInstance().displayImage("http://www.jcodecraeer.com/uploads/allimg/160510/1_1155023781.png",imageView);
+        AppImageLoader.displayImage("http://www.jcodecraeer.com/uploads/allimg/160510/1_1155023781.png",imageView);
+
+
     }
 
     View.OnClickListener l = new View.OnClickListener() {
