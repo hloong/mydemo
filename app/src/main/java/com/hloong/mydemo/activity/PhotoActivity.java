@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.facebook.drawee.view.SimpleDraweeView;
 import com.hloong.mydemo.R;
 import com.hloong.mydemo.universal.AppImageLoader;
 
@@ -36,35 +37,23 @@ public class PhotoActivity extends Activity {
     public static final String RESULT_PATH = "result_path";
     public static final String PASS_PATH = "pass_path";
     private ImageView imageView;
+    private SimpleDraweeView simpleDraweeView;
+    private static final String uri = "http://www.jcodecraeer.com/uploads/allimg/160510/1_1155023781.png";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        AppImageLoader.init(this);
         setContentView(R.layout.activity_photo);
 
         findViewById(R.id.btn_local).setOnClickListener(l);
         findViewById(R.id.btn_camera).setOnClickListener(l);
         imageView = (ImageView) findViewById(R.id.iv);
+        simpleDraweeView = (SimpleDraweeView) findViewById(R.id.my_image_view);
 
-//        ImageLoader imageLoader = new ImageLoader();
-//        imageLoader.setImageCache(new DoubleCache());//使用双缓存
-//        imageLoader.setImageCache(new DiskCache());//使用sd卡缓存
-//        imageLoader.setImageCache(new MemoryCache());//使用内存缓存
-//        imageLoader.setImageCache(new ImageCache() {//使用自定义缓存
-//            @Override
-//            public void put(String url, Bitmap bitmap) {
-//
-//            }
-//
-//            @Override
-//            public Bitmap get(String url) {
-//                return null;
-//            }
-//        });
 
 //        ImageLoader.getInstance().displayImage("http://www.jcodecraeer.com/uploads/allimg/160510/1_1155023781.png",imageView);
-        AppImageLoader.displayImage("http://www.jcodecraeer.com/uploads/allimg/160510/1_1155023781.png",imageView);
-
-
+        AppImageLoader.displayImage(this,uri,imageView);
+        AppImageLoader.displayImage(uri,simpleDraweeView);
     }
 
     View.OnClickListener l = new View.OnClickListener() {

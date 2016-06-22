@@ -36,7 +36,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        AppImageLoader.initImageLoader(this);
+
 
         setContentView(R.layout.activity_main);
         textView =(TextView)findViewById(R.id.tv);

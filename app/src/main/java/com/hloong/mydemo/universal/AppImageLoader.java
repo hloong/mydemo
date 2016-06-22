@@ -1,24 +1,26 @@
 package com.hloong.mydemo.universal;
 
 import android.content.Context;
+import android.net.Uri;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.drawee.view.SimpleDraweeView;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
-import com.squareup.picasso.Picasso;
 
 /**
+ * 图片加载框架合集
  * Created by Administrator on 2016/6/21.
  */
 public class AppImageLoader {
 
-    public static final int way=0;//0表示UIL框架，1表示Fresco框架，其他的Picasso和Glide不需要初始化
-    public static void init(Context context,int way){
-        switch (way){
+    public static final int TYPE=1;//0表示UIL框架，1表示Fresco框架，其他的Picasso和Glide不需要初始化
+    public static void init(Context context){
+        switch (TYPE){
             case 0:
                 initImageLoader(context);
                 break;
@@ -49,10 +51,33 @@ public class AppImageLoader {
         ImageLoader.getInstance().init(config.build());
     }
 
-    public static void displayImage(Context context,String uri, ImageView imageView) {
+    /**
+     * UIL图片基本加载
+     * @param uri
+     * @param imageView
+     */
+    public static void displayImage(String uri, ImageView imageView) {
         ImageLoader.getInstance().displayImage(uri,imageView);
-        Picasso.with(context).load(uri).into(imageView);
+    }
+
+    /**
+     * Picasso,Glide图片基本加载
+     * @param context
+     * @param uri
+     * @param imageView
+     */
+    public static void displayImage(Context context,String uri, ImageView imageView) {
+//        Picasso.with(context).load(uri).into(imageView);
         Glide.with(context).load(uri).into(imageView);
     }
 
+    /**
+     * Fresco 图片基本加载
+     * @param src
+     * @param draweeView
+     */
+    public static void displayImage(String src, SimpleDraweeView draweeView){
+        Uri uri = Uri.parse(src);
+        draweeView.setImageURI(uri);
+    }
 }
