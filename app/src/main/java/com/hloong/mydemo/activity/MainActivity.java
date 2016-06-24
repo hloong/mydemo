@@ -9,6 +9,7 @@ import android.view.View.OnClickListener;
 import android.widget.TextView;
 
 import com.hloong.mydemo.BaseActivity;
+import com.hloong.mydemo.Main2Activity;
 import com.hloong.mydemo.R;
 import com.hloong.mydemo.net.MultipartEntity;
 import com.hloong.mydemo.net.MultipartRequest;
@@ -17,7 +18,6 @@ import com.hloong.mydemo.net.Request.RequestListener;
 import com.hloong.mydemo.net.RequestQueue;
 import com.hloong.mydemo.net.SimpleNet;
 import com.hloong.mydemo.net.StringRequest;
-import com.hloong.mydemo.universal.AppImageLoader;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -51,6 +51,8 @@ public class MainActivity extends BaseActivity {
         getView(R.id.btn_chenjinshi).setOnClickListener(l);
         getView(R.id.btn_scale).setOnClickListener(l);
         getView(R.id.btn_photo).setOnClickListener(l);
+        getView(R.id.btn_tap).setOnClickListener(l);
+        getView(R.id.btn_cache).setOnClickListener(l);
     }
     
     
@@ -91,6 +93,12 @@ public class MainActivity extends BaseActivity {
                     break;
                 case R.id.btn_photo:
                     openActivity(PhotoActivity.class);
+                    break;
+                case R.id.btn_tap:
+                    openActivity(Main2Activity.class);
+                    break;
+                case R.id.btn_cache:
+                    openActivity(AcacheActivity.class);
                     break;
                 default:
                     break;
