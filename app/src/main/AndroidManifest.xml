@@ -39,7 +39,8 @@
         <activity android:name=".activity.PhotoActivity" />
         <activity android:name=".activity.ClipImageActivity" />
         <activity android:name=".Main2Activity" />
-        <activity android:name=".activity.AcacheActivity"></activity>
+        <activity android:name=".activity.AcacheActivity" />
+        <activity android:name=".activity.AnnotationsActivity_"></activity>
     </application>
 
 </manifest>

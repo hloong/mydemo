@@ -52,6 +52,7 @@ public class MainActivity extends BaseActivity {
         getView(R.id.btn_photo).setOnClickListener(l);
         getView(R.id.btn_tap).setOnClickListener(l);
         getView(R.id.btn_cache).setOnClickListener(l);
+        getView(R.id.btn_AA).setOnClickListener(l);
     }
     
     
@@ -98,6 +99,9 @@ public class MainActivity extends BaseActivity {
                     break;
                 case R.id.btn_cache:
                     openActivity(AcacheActivity.class);
+                    break;
+                case R.id.btn_AA:
+                    openActivity(AnnotationsActivity_.class);
                     break;
                 default:
                     break;

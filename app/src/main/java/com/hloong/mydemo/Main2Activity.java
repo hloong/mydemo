@@ -8,6 +8,9 @@ import android.support.v4.view.ViewPager;
 
 import com.hloong.mydemo.fragment.SimpleFragment;
 
+/**
+ * 自动模板
+ */
 public class Main2Activity extends BaseActivity {
 
 

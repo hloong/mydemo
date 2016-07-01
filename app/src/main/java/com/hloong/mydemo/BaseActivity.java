@@ -38,5 +38,4 @@ public class BaseActivity extends AppCompatActivity {
         LayoutInflater.from(this).inflate(layoutResID, baseContent, true);
     }
 
-
 }

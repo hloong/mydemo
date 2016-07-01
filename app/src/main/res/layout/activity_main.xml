@@ -100,5 +100,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="数据缓存ACache" />
+    <Button
+        android:id="@+id/btn_AA"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AndroidAnnotations注入框架示例" />
 	</LinearLayout>
 </ScrollView>

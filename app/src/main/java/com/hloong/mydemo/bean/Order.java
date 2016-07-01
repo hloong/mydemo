@@ -1,5 +1,4 @@
 package com.hloong.mydemo.bean;
-
 public class Order {
     private String msg;
     private int code;
