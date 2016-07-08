@@ -2,6 +2,7 @@ package com.hloong.mydemo.util;
 
 import android.app.Activity;
 import android.content.Context;
+import android.telephony.TelephonyManager;
 import android.util.DisplayMetrics;
 
 /**
@@ -21,6 +22,22 @@ public class AppUtil {
      * */
     public static int getHeight(Context context) {
         return context.getResources().getDisplayMetrics().heightPixels;
+    }
+
+    /**
+     * 获取手机串号(IMEI)
+     *
+     * @param context
+     * @return
+     */
+    public static String getIMEI(Context context) {
+        TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+        String imei = tm.getDeviceId();
+        if (imei == null) {
+            return "";
+        } else {
+            return imei;
+        }
     }
 
     /**
