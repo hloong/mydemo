@@ -102,6 +102,8 @@ public class MainActivity extends BaseActivity {
                     break;
                 case R.id.btn_AA:
                     openActivity(AnnotationsActivity_.class);
+                case R.id.btn_rxjava:
+                    openActivity(RxJavaRetrofitActivity.class);
                     break;
                 default:
                     break;
