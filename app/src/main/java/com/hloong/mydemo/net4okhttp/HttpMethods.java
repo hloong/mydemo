@@ -60,10 +60,10 @@ public class HttpMethods {
      *
      * @param <T> Subscriber真正需要的数据类型，也就是Data部分的数据类型
      */
-    private class HttpResultFunc<T> implements Func1<HttpResult<T>, T> {
+    private class HttpResultFunc<T> implements Func1<httpResult<T>, T> {
 
         @Override
-        public T call(HttpResult<T> httpResult) {
+        public T call(httpResult<T> httpResult) {
             if (httpResult.getCode() != 200) {
                 throw new ApiException(httpResult.getCode());
             }

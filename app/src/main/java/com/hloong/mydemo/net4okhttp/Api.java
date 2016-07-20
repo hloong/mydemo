@@ -12,6 +12,6 @@ import rx.Observable;
 public interface Api {
     @GET("top250")
 //    Call<MovieEntity> getTopMoive(@Query("start") int start,@Query("count") int count);
-    Observable<HttpResult<MovieEntity>> getTopMoive(@Query("start") int start, @Query("count") int count);
+    Observable<httpResult<MovieEntity>> getTopMoive(@Query("start") int start, @Query("count") int count);
 
 }

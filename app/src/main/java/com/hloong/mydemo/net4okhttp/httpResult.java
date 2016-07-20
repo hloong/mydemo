@@ -1,13 +1,20 @@
 package com.hloong.mydemo.net4okhttp;
 
 /**
- * Created by Administrator on 2016/7/12.
+ * Created by hl on 16/7/20.
  */
-public class HttpResult<T> {
+public class httpResult<T> {
     private int code;
     private String msg;
-
     private T data;
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
+    }
 
     public int getCode() {
         return code;
@@ -23,13 +30,5 @@ public class HttpResult<T> {
 
     public void setMsg(String msg) {
         this.msg = msg;
-    }
-
-    public T getData() {
-        return data;
-    }
-
-    public void setData(T data) {
-        this.data = data;
     }
 }
