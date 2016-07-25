@@ -1,4 +1,4 @@
-package com.hloong.mydemo.net;
+package com.hloong.mydemo.net4demo;
 
 /** SimpleNet入口
  * Created by Administrator on 2016/6/17.

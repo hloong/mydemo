@@ -81,6 +81,9 @@ public class RxJavaRetrofitActivity extends Activity {
 //           });
 //    }
 
+    /**
+     * net4okhttp封装
+     */
     private void get3Movie(){
         SubscriberOnNextListener getTopMovieOnNext = new SubscriberOnNextListener<MovieEntity>(){
             @Override

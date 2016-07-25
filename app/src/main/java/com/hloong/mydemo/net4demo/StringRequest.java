@@ -1,4 +1,4 @@
-package com.hloong.mydemo.net;
+package com.hloong.mydemo.net4demo;
 
 public class StringRequest extends Request<String> {
 

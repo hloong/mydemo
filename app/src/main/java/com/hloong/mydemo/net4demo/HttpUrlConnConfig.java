@@ -1,4 +1,4 @@
-package com.hloong.mydemo.net;
+package com.hloong.mydemo.net4demo;
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLSocketFactory;

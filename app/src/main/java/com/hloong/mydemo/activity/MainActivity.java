@@ -11,12 +11,12 @@ import android.widget.TextView;
 import com.hloong.mydemo.BaseActivity;
 import com.hloong.mydemo.Main2Activity;
 import com.hloong.mydemo.R;
-import com.hloong.mydemo.net.MultipartEntity;
-import com.hloong.mydemo.net.MultipartRequest;
-import com.hloong.mydemo.net.Request.RequestListener;
-import com.hloong.mydemo.net.RequestQueue;
-import com.hloong.mydemo.net.SimpleNet;
-import com.hloong.mydemo.net.StringRequest;
+import com.hloong.mydemo.net4demo.MultipartEntity;
+import com.hloong.mydemo.net4demo.MultipartRequest;
+import com.hloong.mydemo.net4demo.Request.RequestListener;
+import com.hloong.mydemo.net4demo.RequestQueue;
+import com.hloong.mydemo.net4demo.SimpleNet;
+import com.hloong.mydemo.net4demo.StringRequest;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -175,7 +175,7 @@ public class MainActivity extends BaseActivity {
     private void sendStringRequest() {
         final ProgressDialog dialog = new ProgressDialog(this);
         dialog.show();
-        StringRequest request = new StringRequest(com.hloong.mydemo.net.Request.HttpMethod.GET, "http://www.baidu.com",
+        StringRequest request = new StringRequest(com.hloong.mydemo.net4demo.Request.HttpMethod.GET, "http://www.baidu.com",
                 new RequestListener<String>() {
                     @Override
                     public void onComplete(int stCode, String response, String errMsg) {

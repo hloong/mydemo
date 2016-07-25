@@ -1,4 +1,4 @@
-package com.hloong.mydemo.net;
+package com.hloong.mydemo.net4demo;
 /**
  * 执行网络请求的接口
  *

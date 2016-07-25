@@ -1,4 +1,4 @@
-package com.hloong.mydemo.net;
+package com.hloong.mydemo.net4demo;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.ProtocolVersion;
