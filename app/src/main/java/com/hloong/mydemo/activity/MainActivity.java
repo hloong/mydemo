@@ -53,6 +53,7 @@ public class MainActivity extends BaseActivity {
         getView(R.id.btn_tap).setOnClickListener(l);
         getView(R.id.btn_cache).setOnClickListener(l);
         getView(R.id.btn_AA).setOnClickListener(l);
+        getView(R.id.btn_baidu_loc).setOnClickListener(l);
     }
     
     
@@ -104,6 +105,9 @@ public class MainActivity extends BaseActivity {
                     openActivity(AnnotationsActivity_.class);
                 case R.id.btn_rxjava:
                     openActivity(RxJavaRetrofitActivity.class);
+                    break;
+                case R.id.btn_baidu_loc:
+                    openActivity(BaiduLocActivity.class);
                     break;
                 default:
                     break;

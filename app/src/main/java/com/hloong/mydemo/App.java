@@ -2,6 +2,7 @@ package com.hloong.mydemo;
 
 import android.app.Application;
 
+import com.baidu.mapapi.SDKInitializer;
 import com.hloong.mydemo.util.ACrash;
 
 /**
@@ -14,6 +15,6 @@ public class App extends Application{
     public void onCreate() {
         super.onCreate();
         ACrash.getInstance().setCustomCrashInfo(this);
-
+        SDKInitializer.initialize(this);
     }
 }

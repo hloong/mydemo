@@ -44,8 +44,7 @@ public class HttpMethods {
     }
 
     public void getTopMovie(Subscriber<MovieEntity> subscriber,int start,int count){
-        Observable observable =api.getTopMoive(start,count)
-                .map(new HttpResultFunc<MovieEntity>());
+        Observable observable =api.getTopMoive(start,count).map(new HttpResultFunc<MovieEntity>());
         toSubscribe(observable,subscriber);
     }
     private <T> void toSubscribe(Observable<T> o, Subscriber<T> s){
