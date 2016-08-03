@@ -15,6 +15,6 @@ public class App extends Application{
     public void onCreate() {
         super.onCreate();
         ACrash.getInstance().setCustomCrashInfo(this);
-        SDKInitializer.initialize(this);
+        SDKInitializer.initialize(this);//百度定位SDK
     }
 }

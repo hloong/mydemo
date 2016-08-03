@@ -1,11 +1,16 @@
 package com.hloong.mydemo.activity;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
-import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.hloong.mydemo.BaseActivity;
@@ -22,6 +27,9 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
@@ -31,90 +39,28 @@ import okhttp3.Response;
 
 public class MainActivity extends BaseActivity {
     private String url = "http://op.juhe.cn/shanghai/police?key=4ceeff4e2486d39a40df48f3118e5a9c";
-    private TextView textView;
+    @BindView(R.id.tv)      TextView textView;
+    @BindView(R.id.lv_main) ListView lv_main;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
         setContentView(R.layout.activity_main);
-        textView =(TextView)findViewById(R.id.tv);
-        textView.setOnClickListener(l);
-        getView(R.id.btn_multi_list).setOnClickListener(l);
-        getView(R.id.btn_multi).setOnClickListener(l);
-        getView(R.id.btn_simple_list).setOnClickListener(l);
-        getView(R.id.btn_list_gridview).setOnClickListener(l);
-        getView(R.id.btn_bar_code).setOnClickListener(l);
-        getView(R.id.btn_two_side_circle).setOnClickListener(l);
-        getView(R.id.btn_form).setOnClickListener(l);
-        getView(R.id.btn_chenjinshi).setOnClickListener(l);
-        getView(R.id.btn_scale).setOnClickListener(l);
-        getView(R.id.btn_photo).setOnClickListener(l);
-        getView(R.id.btn_tap).setOnClickListener(l);
-        getView(R.id.btn_cache).setOnClickListener(l);
-        getView(R.id.btn_AA).setOnClickListener(l);
-        getView(R.id.btn_baidu_loc).setOnClickListener(l);
-    }
-    
-    
-    
-    OnClickListener l = new OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            // TODO Auto-generated method stub
-            switch (v.getId()) {
-                case R.id.tv:
-                    sendStringRequest();
-                    break;
-                case R.id.btn_multi:
-                    openActivity(MultiListActivity.class);
-                    break;
-                case R.id.btn_multi_list:
-                    openActivity(ChatActivity.class);
-                    break;
-                case R.id.btn_simple_list:
-                    openActivity(SimpleListActivity.class);
-                    break;
-                case R.id.btn_list_gridview:
-                    openActivity(ListGridViewActivity.class);
-                    break;
-                case R.id.btn_bar_code:
-                    break;
-                case R.id.btn_two_side_circle:
-                    openActivity(CircleBarActivity.class);
-                    break;
-                case R.id.btn_form:
-                    openActivity(GraphViewActivity.class);
-                    break;
-                case R.id.btn_chenjinshi:
-                    openActivity(ChenJinShiActivity.class);
-                    break;
-                case R.id.btn_scale:
-                    openActivity(ScaleActivity.class);
-                    break;
-                case R.id.btn_photo:
-                    openActivity(PhotoActivity.class);
-                    break;
-                case R.id.btn_tap:
-                    openActivity(Main2Activity.class);
-                    break;
-                case R.id.btn_cache:
-                    openActivity(AcacheActivity.class);
-                    break;
-                case R.id.btn_AA:
-                    openActivity(AnnotationsActivity_.class);
-                case R.id.btn_rxjava:
-                    openActivity(RxJavaRetrofitActivity.class);
-                    break;
-                case R.id.btn_baidu_loc:
-                    openActivity(BaiduLocActivity.class);
-                    break;
-                default:
-                    break;
+        ButterKnife.bind(this);
+        lv_main.setAdapter(new DemoListAdapter());
+        lv_main.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(MainActivity.this,demos[position].demoClass);
+                startActivity(intent);
             }
-        }
-    };
+        });
 
+    }
+
+    @OnClick(R.id.tv)
+    void onClick(){
+        sendStringRequest();
+    }
 
     /**
      * okhttp 请求
@@ -234,6 +180,66 @@ public class MainActivity extends BaseActivity {
     protected void onDestroy() {
         mQueue.stop();
         super.onDestroy();
+    }
+
+
+    private static final Info[] demos = {
+      new Info("ListView包含多种布局状态，聊天消息",ChatActivity.class),
+      new Info("ListView包含多种布局状态",MultiListActivity.class),
+      new Info("普通的ListView",SimpleListActivity.class),
+      new Info("ListView下包含GridView",ListGridViewActivity.class),
+      new Info("二维码扫描",ScaleActivity.class),
+      new Info("带abcde列表展示",MultiListActivity.class),
+      new Info("点击2边同时上升的环形demo",CircleBarActivity.class),
+      new Info("股票，价格收益表格demo",GraphViewActivity.class),
+      new Info("沉浸式界面",ChenJinShiActivity.class),
+      new Info("缩放图片Maxtri测试",ScaleActivity.class),
+      new Info("微信头像上传",PhotoActivity.class),
+      new Info("生成temple样式的 滑动tap",Main2Activity.class),
+      new Info("数据缓存ACache",AcacheActivity.class),
+      new Info("rxjava与Retrofit示例",RxJavaRetrofitActivity.class),
+      new Info("百度定位demo",BaiduLocActivity.class),
+    };
+
+    /**
+     * 列表标题
+     */
+    private static class Info{
+        private final String title;
+        private final Class<? extends Activity> demoClass;
+        public Info(String title,Class<? extends Activity> demoClass){
+            this.title = title;
+            this.demoClass = demoClass;
+        }
+    }
+
+    private class DemoListAdapter extends BaseAdapter{
+        public DemoListAdapter(){
+            super();
+        }
+
+        @Override
+        public int getCount() {
+            return demos.length;
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return demos[position];
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            convertView = View.inflate(MainActivity.this,R.layout.item_simple_list,null);
+            TextView title = (TextView)convertView.findViewById(R.id.tv_title);
+            title.setText(demos[position].title);
+            return convertView;
+        }
     }
 
 }

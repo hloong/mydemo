@@ -12,6 +12,7 @@
         android:id="@+id/bmapView"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:layout_margin="10dp"
         android:clickable="true" />
 
     <LinearLayout
@@ -19,7 +20,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_marginTop="80dip"
-        android:background="#D000"
         android:minWidth="100dip"
         android:orientation="vertical"
         android:padding="2dp" >
@@ -53,6 +53,15 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="10dip" />
+    <Button
+        android:id="@+id/buttonLoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="定位"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginRight="25dp"
         android:layout_marginTop="10dip" />
 </RelativeLayout>

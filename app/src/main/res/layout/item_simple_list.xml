@@ -4,16 +4,18 @@
     android:layout_height="wrap_content"
     android:background="#ffffff"
     android:orientation="vertical"
-    android:padding="10dp" >
+    android:padding="10dp"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:singleLine="true"
-        android:text="红色钱包"
+        tools:text="红色钱包"
         android:textSize="16sp"
-        android:textColor="#444444" >
+        android:textColor="#444444"
+        >
     </TextView>
 
     <TextView
@@ -24,7 +26,7 @@
         android:layout_marginTop="10dp"
         android:maxLines="2"
         android:minLines="1"
-        android:text="周三早上丢失了红色钱包，在食堂二楼"
+        tools:text="周三早上丢失了红色钱包，在食堂二楼"
         android:textColor="#898989"
         android:textSize="16sp" >
     </TextView>
@@ -35,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_describe"
         android:layout_marginTop="10dp"
-        android:text="20130240122"
+        tools:text="20130240122"
         android:textColor="#898989"
         android:textSize="12sp" >
     </TextView>
@@ -54,7 +56,7 @@
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         android:paddingTop="3dp"
-        android:text="138024249542"
+        tools:text="138024249542"
         android:textColor="#ffffff"
         android:textSize="12sp" >
     </TextView>

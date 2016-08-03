@@ -18,7 +18,7 @@ import com.student.entity.Student;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -28,19 +28,19 @@ public class GreenDaoActivity extends BaseActivity implements View.OnClickListen
     private static final String TAG = GreenDaoActivity.class.getSimpleName();
     private CommitUtils commitUtils;
 
-    @Bind(R.id.et_staff_num)
+    @BindView(R.id.et_staff_num)
     EditText mStaffNumInput;
-    @Bind(R.id.et_staff_name)
+    @BindView(R.id.et_staff_name)
     EditText mStaffNameInput;
-    @Bind(R.id.et_staff_ege)
+    @BindView(R.id.et_staff_ege)
     EditText mStaffAgeInput;
-    @Bind(R.id.et_staff_motto)
+    @BindView(R.id.et_staff_motto)
     EditText mStaffMottoInput;
-    @Bind(R.id.btn_insert)
+    @BindView(R.id.btn_insert)
     Button mInsertButton;
-    @Bind(R.id.btn_search)
+    @BindView(R.id.btn_search)
     Button mSearchButton;
-    @Bind(R.id.recyler_staffs)
+    @BindView(R.id.recyler_staffs)
     RecyclerView mStaffsRecylerView;
 
 

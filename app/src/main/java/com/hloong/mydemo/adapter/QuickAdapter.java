@@ -66,6 +66,8 @@ public abstract class QuickAdapter<T> extends BaseQuickAdapter<T, BaseViewHolder
         super(context, data, multiItemSupport);
     }
 
+
+
     protected BaseViewHolder getAdapterHelper(int position,
             View convertView, ViewGroup parent) {
 

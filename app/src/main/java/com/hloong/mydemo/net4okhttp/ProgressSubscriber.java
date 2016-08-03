@@ -2,6 +2,8 @@ package com.hloong.mydemo.net4okhttp;
 
 import android.content.Context;
 
+import com.hloong.mydemo.util.LogUtil;
+
 import rx.Subscriber;
 
 /**
@@ -17,21 +19,24 @@ public class ProgressSubscriber<T> extends Subscriber<T>{
     }
     @Override
     public void onCompleted() {
-
+        LogUtil.d("onCompleted");
     }
 
     @Override
     public void onError(Throwable e) {
-
+        LogUtil.d("onError");
     }
 
     @Override
     public void onNext(T t) {
         listener.onNext(t);
+        LogUtil.d("onNext");
+
     }
 
     @Override
     public void onStart() {
         super.onStart();
+        LogUtil.d("onStart");
     }
 }

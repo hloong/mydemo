@@ -11,14 +11,14 @@ import com.hloong.mydemo.net4okhttp.HttpMethods;
 import com.hloong.mydemo.net4okhttp.ProgressSubscriber;
 import com.hloong.mydemo.net4okhttp.SubscriberOnNextListener;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class RxJavaRetrofitActivity extends Activity {
-    @Bind(R.id.click_me_BN)
+    @BindView(R.id.click_me_BN)
     Button btClickMe;
-    @Bind(R.id.result_TV)
+    @BindView(R.id.result_TV)
     TextView tvResult;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
