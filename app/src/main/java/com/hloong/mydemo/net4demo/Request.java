@@ -274,5 +274,6 @@ public abstract class Request<T> implements Comparable<Request<T>>{
          * 请求完成后的回调
          */
         public void onComplete(int code,T response,String msg);
+
     }
 }
