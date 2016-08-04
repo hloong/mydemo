@@ -199,6 +199,7 @@ public class MainActivity extends BaseActivity {
       new Info("数据缓存ACache",AcacheActivity.class),
       new Info("rxjava与Retrofit示例",RxJavaRetrofitActivity.class),
       new Info("百度定位demo",BaiduLocActivity.class),
+      new Info("EventBus事件总线demo",EventBusActivity.class),
     };
 
     /**
