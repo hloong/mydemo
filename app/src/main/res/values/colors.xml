@@ -33,4 +33,12 @@
   <color name="primary">#FF03A9F4</color>
   <color name="primary_dark">#FF0288D1</color>
   <color name="status_bar_color">@color/primary_dark</color>
+
+
+  <!--对应cardview颜色-->
+  <color name="color_card01">#FF03A9F4</color>
+  <color name="color_card02">#FF90A9DD</color>
+  <color name="color_card03">#FFBBA9BB</color>
+  <color name="color_card04">#FFAAA904</color>
+  <color name="color_card05">#FF03AC44</color>
 </resources>

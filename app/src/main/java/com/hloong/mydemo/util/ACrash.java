@@ -20,12 +20,12 @@ import java.util.TimeZone;
  * Created by Administrator on 2016/6/27.
  */
 public class ACrash implements Thread.UncaughtExceptionHandler{
-    private static final String TAG="CustomCrash";
+    private static final String TAG="ACrash";
     private static final int TYPE_SAVE_SDCARD=1; //崩溃日志保存本地SDCard  --建议开发模式使用
     private static final int TYPE_SAVE_REMOTE=2; //崩溃日志保存远端服务器 --建议生产模式使用
 
     private int type_save=2;  //崩溃保存日志模式 默认为2，采用保存Web服务器
-    private static final String CRASH_SAVE_SDPATH="sdcard/fda_cache/"; //崩溃日志SD卡保存路径
+    private static final String CRASH_SAVE_SDPATH="sdcard/hloong_cache/"; //崩溃日志SD卡保存路径
     private static final String CARSH_LOG_DELIVER="http://img2.xxh.cc:8080/SalesWebTest/CrashDeliver";
     private static ACrash instance = new ACrash();
     private Context mContext;

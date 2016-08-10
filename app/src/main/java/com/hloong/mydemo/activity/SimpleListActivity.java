@@ -8,8 +8,8 @@ import android.widget.Toast;
 
 import com.hloong.mydemo.BaseActivity;
 import com.hloong.mydemo.R;
-import com.hloong.mydemo.adapter.BaseViewHolder;
-import com.hloong.mydemo.adapter.QuickAdapter;
+import com.hloong.mydemo.adapter.quick.BaseViewHolder;
+import com.hloong.mydemo.adapter.quick.QuickAdapter;
 import com.hloong.mydemo.bean.SimpleListBean;
 
 import java.util.ArrayList;

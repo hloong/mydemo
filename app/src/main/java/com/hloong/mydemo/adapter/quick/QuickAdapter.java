@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.hloong.mydemo.adapter;
+package com.hloong.mydemo.adapter.quick;
 
 import android.content.Context;
 import android.view.View;
@@ -22,7 +22,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.hloong.mydemo.adapter.BaseViewHolder.get;
+import static com.hloong.mydemo.adapter.quick.BaseViewHolder.get;
 
 /**
  * Abstraction class of a BaseAdapter in which you only need to provide the

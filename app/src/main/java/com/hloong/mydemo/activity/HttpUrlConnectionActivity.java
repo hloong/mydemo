@@ -31,7 +31,7 @@ import butterknife.OnClick;
 public class HttpUrlConnectionActivity extends BaseActivity {
 
     private NetworkAsyncTask networkAsyncTask = new NetworkAsyncTask();
-
+//
     @BindView(R.id.tvUrl) TextView tvUrl;
     @BindView(R.id.tvRequestHeader) TextView tvRequestHeader;
     @BindView(R.id.tvRequestBody) TextView tvRequestBody;
@@ -42,18 +42,12 @@ public class HttpUrlConnectionActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_http_url_connection);
-//        Intent intent = getIntent();
-//        if (intent != null && intent.getExtras() != null) {
-//            String networkAction = intent.getStringExtra("action");
-//            networkAsyncTask.execute(networkAction);
-//        }
         ButterKnife.bind(this);
-//        networkAsyncTask.execute("NETWORK_GET");
 
     }
 
 
-    @OnClick(R.id.btn_get)
+    @OnClick(R.id.btnGet)
     void onClick(){
         networkAsyncTask.execute("NETWORK_GET");
     }

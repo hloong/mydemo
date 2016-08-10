@@ -226,6 +226,8 @@ public class MainActivity extends BaseActivity {
             new Info("百度定位demo", BaiduLocActivity.class),
             new Info("EventBus事件总线demo", EventBusActivity.class),
             new Info("HttpUrlConnection示例", HttpUrlConnectionActivity.class),
+            new Info("RecylerView示例代码", RecyclerViewActivity.class),
+            new Info("DragViewHelper示例代码", DragViewActivity.class),
     };
 
     /**

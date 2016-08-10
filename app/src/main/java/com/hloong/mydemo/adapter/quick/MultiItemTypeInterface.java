@@ -1,4 +1,4 @@
-package com.hloong.mydemo.adapter;
+package com.hloong.mydemo.adapter.quick;
 /**
  * list多布局接口
  * @author hloong

@@ -5,9 +5,9 @@ import android.widget.ListView;
 
 import com.hloong.mydemo.BaseActivity;
 import com.hloong.mydemo.R;
-import com.hloong.mydemo.adapter.BaseViewHolder;
-import com.hloong.mydemo.adapter.MultiItemTypeInterface;
-import com.hloong.mydemo.adapter.QuickAdapter;
+import com.hloong.mydemo.adapter.quick.BaseViewHolder;
+import com.hloong.mydemo.adapter.quick.MultiItemTypeInterface;
+import com.hloong.mydemo.adapter.quick.QuickAdapter;
 import com.hloong.mydemo.bean.ChatMessage;
 
 import java.util.ArrayList;
