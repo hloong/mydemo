@@ -228,6 +228,7 @@ public class MainActivity extends BaseActivity {
             new Info("HttpUrlConnection示例", HttpUrlConnectionActivity.class),
             new Info("RecylerView示例代码", RecyclerViewActivity.class),
             new Info("DragViewHelper示例代码", DragViewActivity.class),
+            new Info("FlowLayout流式布局", FlowActivity.class),
     };
 
     /**
@@ -265,8 +266,8 @@ public class MainActivity extends BaseActivity {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            convertView = View.inflate(MainActivity.this, R.layout.item_simple_list, null);
-            TextView title = (TextView) convertView.findViewById(R.id.tv_title);
+            convertView = View.inflate(MainActivity.this, android.R.layout.simple_list_item_1, null);
+            TextView title = (TextView) convertView.findViewById(android.R.id.text1);
             title.setText(demos[position].title);
             return convertView;
         }

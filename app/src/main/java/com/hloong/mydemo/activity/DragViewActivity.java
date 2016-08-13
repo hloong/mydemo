@@ -1,11 +1,11 @@
 package com.hloong.mydemo.activity;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 
-import com.hloong.mydemo.BaseActivity;
 import com.hloong.mydemo.R;
 import com.hloong.mydemo.ui.DragLayout;
 import com.hloong.mydemo.util.LogUtil;
@@ -16,7 +16,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnItemClick;
 
-public class DragViewActivity extends BaseActivity implements DragLayout.DragListener{
+public class DragViewActivity extends Activity implements DragLayout.DragListener{
     @BindView(R.id.dl) DragLayout dl;
     @BindView(R.id.lv) ListView lv;
     @BindView(R.id.iv_icon) ImageView iv;
