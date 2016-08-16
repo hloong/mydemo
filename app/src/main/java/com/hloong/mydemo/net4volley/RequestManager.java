@@ -51,4 +51,5 @@ public class RequestManager {
 	public void CallALlRequest(){
 		mRequestQueue.cancelAll(getRequestQueue());
 	}
+
 }

@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
         android:fitsSystemWindows="true"
+        android:padding="10dp"
         app:title="@string/app_name"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 

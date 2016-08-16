@@ -40,6 +40,7 @@ public class RecyclerViewActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler_view);
         ButterKnife.bind(this);
+        closeToolBar();
         adatper = new RecyclerTestAdatper(this);
         cdadapter = new CardViewAdapter(this);
         initView(1);
