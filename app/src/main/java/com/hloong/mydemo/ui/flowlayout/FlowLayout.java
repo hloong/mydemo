@@ -1,4 +1,4 @@
-package com.hloong.mydemo.ui;
+package com.hloong.mydemo.ui.flowlayout;
 
 import android.content.Context;
 import android.util.AttributeSet;

@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import com.hloong.mydemo.BaseActivity;
 import com.hloong.mydemo.R;
-import com.hloong.mydemo.ui.FlowLayout;
+import com.hloong.mydemo.ui.flowlayout.FlowLayout;
 import com.hloong.mydemo.util.DisplayUtils;
 
 import java.util.ArrayList;

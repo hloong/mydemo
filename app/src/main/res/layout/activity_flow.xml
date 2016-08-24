@@ -4,11 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.hloong.mydemo.activity.FlowActivity">
-    <com.hloong.mydemo.ui.FlowLayout
+    <com.hloong.mydemo.ui.flowLayout.FlowLayout
         android:id="@+id/flowlayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
 
-    </com.hloong.mydemo.ui.FlowLayout>
+    </com.hloong.mydemo.ui.flowLayout.FlowLayout>
 </ScrollView>
