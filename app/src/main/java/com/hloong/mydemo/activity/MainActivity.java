@@ -230,6 +230,8 @@ public class MainActivity extends BaseActivity {
             new Info("DragViewHelper示例代码", DragViewActivity.class),
             new Info("FlowLayout流式布局", FlowActivity.class),
             new Info("复杂的FlowLayout流式布局", TabFlowActivity.class),
+            new Info("AIDL简单实例，跳转到另外一个aidl_server", AidlActivity.class),
+            new Info("LeakCanary内存泄漏检测", LeakCanaryActivity.class),
     };
 
     /**
