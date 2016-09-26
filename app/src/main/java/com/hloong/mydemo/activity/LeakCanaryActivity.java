@@ -1,6 +1,7 @@
 package com.hloong.mydemo.activity;
 
 import android.app.Activity;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import com.hloong.mydemo.R;
@@ -16,6 +17,12 @@ public class LeakCanaryActivity extends Activity {
         setContentView(R.layout.activity_leak_canary);
         //只有了目前的activity引用，跳转到现在这个acivity后就返回，等一会就有一个内存泄漏的notification出现
         ActivityMgr.getInstance().addActivity(this);
+        AsyncTask task = new AsyncTask() {
+            @Override
+            protected Object doInBackground(Object[] params) {
+                return null;
+            }
+        };
     }
 
 

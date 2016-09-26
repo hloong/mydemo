@@ -16,7 +16,7 @@ android {
         targetSdkVersion 23
         useLibrary 'org.apache.http.legacy'
         versionCode 1
-        versionName "1.0"
+        versionName "0.1"
     }
     buildTypes {
         release {
@@ -24,7 +24,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
+    //阿里百川HotFix必须加maven url
+    repositories {
+        maven {
+            url "http://repo.baichuan-android.taobao.com/content/groups/public/"
+        }
+    }
     sourceSets{
         main{
             java.srcDirs = ['src/main/java','src/main/java-gen']
@@ -70,7 +75,9 @@ dependencies {
     compile 'io.reactivex:rxandroid:1.1.0'
     compile 'org.greenrobot:greendao:3.0.1'
     compile 'org.greenrobot:eventbus:3.0.0'
-
+    //阿里百川HotFix引入
+    compile 'com.alibaba.sdk.android.plugins:alisdk-hotfix:1.2.0'
+    compile 'com.alibaba.sdk.android.plugins.jar:alisdk-utdid:0.0.1'
 }
 
 apt {

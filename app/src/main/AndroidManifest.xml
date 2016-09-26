@@ -44,6 +44,13 @@
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="dV1yjGFucWghMyQo08w8fkucW4I9zezL" />
+        <!-- 阿里百川 HotFix 全球包邮精选 第一个是appsecret，第二个是rsa value-->
+        <meta-data
+            android:name="com.taobao.android.hotfix.APPSECRET"
+            android:value="7b816f00439556f6fd4ff9b2220efddb" />
+        <meta-data
+            android:name="com.taobao.android.hotfix.RSASECRET"
+            android:value="MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCvHEN5vu14wtDzSf43pLumXrQT1X8YHOnAstlXZnBEew99FWaaa+rz4ZmUMKcvSefUZA8dM5Jfr2b35kdVZIOh4BAj74Ho/FbuQsvGV4A8UhRRgN7IGNcKvIDt1IZTub50cjEWMcX/jN0HElr+LBc4USHJVZ2M/uGlohZPLIE510HHPC29cwe9YYuzeZSPw3sDzfztfAl8z/QjkOZGS0PXjtcF7y5XECfQ9qienQyVyeRkGV/hjoH7sV4bLCwlQ+x1SGKaR9NB1hrNGf65j3vJZIwB3TYM+01PS4OozTd+yE6c1w1tLfPkIui8AMnw+8sWY0oJHIQ70ulaVwh2LAelAgMBAAECggEBAIoHglyWFkQJdIFBgwTDcjL7FYFI2czdBZiiodVV5wrj4dqcIut4Q5SH8PIxw6bv37C4Sn2fKDMKZOTlfLcf6u6PWsmowkMvnSpkNpIaaPejT2bLaVBa3C8XVZ2i11tp32mUlYLEKyl8FMG9Q0J06Ly4nyQ/u1fnlWBlOqagEyDOb3Y0HHtE2fvTX+Ef7OaGX/PUmqK4KMkc19WoazPuw2CDZ+XwUg4O7OvaW3UBSlRPB0FoixL4WCmcO0aPi/5aAUJAXXLNEEWmCao297AogGWDJuuztCvWE1bIxmTHaAKv9ebLBW3tQdQBZqFQzu3jUrVvVVGJfyAbZdvr797xFyECgYEA7fgbDV/kXjcVL+qY2Mhw7lupyjYZbFmP8G3D6wSIzb5RgAq+poVSyK5hAP5gEb7RpJdkYYjkzei1j2iZfUi2zdo3dnkSzdcpG+ybmitOHhxgoTUrvJ8CYfJoWjDh+a78RBdATxTJv1M2dHpsHvkRDmuhbf7UBXMFuQ0TXpMJIGkCgYEAvGDihjNb4ZVqfCRg6Mhr1drFDcGOGLLZfSdn7tx6Tn9Kcz8AJPQmvfnZMBSww+JnyVbk6VtgYU0qQa7JrWFcUu4sRhAJ2QvBUmMTLe9KHBlB1wNAQ86+WoHUoaDh9zWMy466MI07+OUNpLaTIB1f99FlSmbFHV/nf3w/xkdBBd0CgYEAy8Hbz/jifjVl49BYrY36/GzqFeV6oUaSs8gYr/wC8z/ZYuxQUB7qQkDleEdWlPsxYF/sqILhftmZ1EA45IhFVj9ZrAyBKFTpsypGFZys16Vuq7nuSCRSkvFPnqIqa3MEN309KDlhgXvLrbJBL8gNba6E270NZ9kT9l4WzqzRbLkCgYEAgW74dkk3qoolfmLoi0mafngwyUDix6mrskivKvomt2TS3Ni+2qU/MW1Ig7bTteQMd9TSuFxmnrSMglD8lbq92uV3WjSO76kaDeexN/CgtSnNiVTchTq6pCls1hla6abLtNm+qLmCKYQImdIwyPImDHq95B809Pf+ciQHFc/Dp6kCgYAH8Hz1FteB+BRJHSE8l04+AfVO4p+CVHoDC6bEYQxxEiTRJhVUHwZ59aa7OuiClgL2NkFQXhErG8FMud/us9hhUaPd4lscpQ9/mbr4eJ2PYKUolzsUM58p+mlORQbLSnJd9KwBOk7ggEsA4XfuWSPoBrZnoO/YG4zHm6OToGQbRQ==" />
 
         <activity
             android:name=".activity.MainActivity"
@@ -90,6 +97,8 @@
             android:exported="true" />
 
         <activity android:name=".activity.LeakCanaryActivity"></activity>
+
+
     </application>
 
 </manifest>

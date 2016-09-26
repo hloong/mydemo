@@ -61,6 +61,12 @@ public class MainActivity extends BaseActivity {
             }
         });
 
+        new Thread(){
+            @Override
+            public void run() {
+                super.run();
+            }
+        }.start();
     }
 
     @OnClick(R.id.tv)
