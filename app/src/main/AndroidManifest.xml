@@ -28,6 +28,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <!-- 访问网络，网络定位需要上网 -->
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -44,7 +45,7 @@
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="dV1yjGFucWghMyQo08w8fkucW4I9zezL" />
-        <!-- 阿里百川 HotFix 全球包邮精选 第一个是appsecret，第二个是rsa value-->
+        <!-- 阿里百川 HotFix 全球包邮精选 第一个是appsecret，第二个是rsa value -->
         <meta-data
             android:name="com.taobao.android.hotfix.APPSECRET"
             android:value="7b816f00439556f6fd4ff9b2220efddb" />
@@ -96,9 +97,8 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".activity.LeakCanaryActivity"></activity>
-
-
+        <activity android:name=".activity.LeakCanaryActivity" />
+        <activity android:name=".activity.HotFixActivity"></activity>
     </application>
 
 </manifest>
