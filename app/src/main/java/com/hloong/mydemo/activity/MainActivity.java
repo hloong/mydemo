@@ -238,7 +238,8 @@ public class MainActivity extends BaseActivity {
             new Info("复杂的FlowLayout流式布局", TabFlowActivity.class),
             new Info("AIDL简单实例，跳转到另外一个aidl_server", AidlActivity.class),
             new Info("LeakCanary内存泄漏检测", LeakCanaryActivity.class),
-            new Info("HotFix修复patch测试", HotFixActivity.class)
+            new Info("HotFix修复patch测试", HotFixActivity.class),
+            new Info("仿美团滑动Scrollview置顶头部购买布局", StickyActivity.class)
     };
 
     /**

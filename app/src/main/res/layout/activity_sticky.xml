@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hloong.mydemo.ui.StickyScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="100dip"
+            android:background="#ffff0000" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="100dip"
+            android:tag="sticky"
+            android:background="#ffffff00" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="100dip"
+            android:background="#ffaaff33" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="100dip"
+            android:background="#ff0000ff" />
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="100dip"
+            android:background="#ff00ffff"
+            android:tag="sticky" >
+
+            <Button
+                android:id="@+id/btn_sticky"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+        </FrameLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="100dip"
+            android:background="#ffff3333" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="100dip"
+            android:background="#ffffeeee" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="100dip"
+            android:background="#ff0033ff" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="100dip"
+            android:background="#ffcc9922" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="100dip"
+            android:background="#ff333333" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="100dip"
+            android:background="#ffeeeeee" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="100dip"
+            android:background="#ff999999" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="100dip"
+            android:background="#fff322ff" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="100dip"
+            android:background="#ff22ff22" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="100dip"
+            android:background="#ffff0000" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="100dip"
+            android:background="#ffff00ff" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="100dip"
+            android:background="#ff00ffff" />
+    </LinearLayout>
+
+</com.hloong.mydemo.ui.StickyScrollView>
