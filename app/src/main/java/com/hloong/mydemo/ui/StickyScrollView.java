@@ -14,6 +14,9 @@ import com.hloong.mydemo.R;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * 参考http://blog.csdn.net/xiaanming/article/details/17761431
+ */
 public class StickyScrollView extends ScrollView {
 	private static final String STICKY = "sticky";
 	private View mCurrentStickyView ;

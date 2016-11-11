@@ -104,7 +104,8 @@
 
         <activity android:name=".activity.LeakCanaryActivity" />
         <activity android:name=".activity.HotFixActivity" />
-        <activity android:name=".activity.StickyActivity"></activity>
+        <activity android:name=".activity.StickyActivity" />
+        <activity android:name=".activity.ContentListActivity"></activity>
     </application>
 
 </manifest>
