@@ -1,6 +1,4 @@
 package com.example;
-
-
 import org.greenrobot.greendao.generator.Entity;
 import org.greenrobot.greendao.generator.Schema;
 import org.greenrobot.greendao.generator.DaoGenerator;

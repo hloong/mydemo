@@ -27,11 +27,11 @@ public class ContentListView extends View {
     private UpdateListView updateListView;
 
     public ContentListView(Context context) {
-        super(context);
+        this(context, null);
     }
 
     public ContentListView(Context context, AttributeSet attrs) {
-        super(context, attrs);
+        this(context, attrs, 0);
     }
 
     public ContentListView(Context context, AttributeSet attrs, int defStyle) {
@@ -48,15 +48,14 @@ public class ContentListView extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        int textHeight = getHeight()/contentList.length;
+        int perTextHeight = getHeight() / contentList.length;
         for (int i = 0; i < contentList.length; i++) {
-            if (i == choosedPosition){
+            if (i == choosedPosition) {
                 paint.setColor(Color.RED);
-            }else {
+            } else {
                 paint.setColor(Color.BLACK);
             }
-            canvas.drawText(contentList[i],(getWidth() - paint.measureText(contentList[i])) / 2, (i + 1) * textHeight, paint);
+            canvas.drawText(contentList[i], (getWidth() - paint.measureText(contentList[i])) / 2, (i + 1) * perTextHeight, paint);
         }
     }
 

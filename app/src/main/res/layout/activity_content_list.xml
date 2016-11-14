@@ -16,7 +16,8 @@
         android:id="@+id/letter_index_view"
         android:layout_width="36dp"
         android:layout_height="match_parent"
-        android:layout_alignParentRight="true"/>
+        android:layout_alignParentRight="true"
+        tools:ignore="RtlHardcoded" />
 
     <TextView
         android:id="@+id/show_letter_in_center"

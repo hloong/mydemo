@@ -11,13 +11,16 @@ import com.hloong.mydemo.adapter.ContentListAdapter;
 import com.hloong.mydemo.bean.User;
 import com.hloong.mydemo.ui.ContentListView;
 import com.hloong.mydemo.util.ChineseToPinyinHelper;
-import com.hloong.mydemo.util.LogUtil;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+
+/**
+ * http://blog.csdn.net/u012702547/article/details/51234227
+ */
 public class ContentListActivity extends BaseActivity {
     private List<User> list;
     private ContentListAdapter adapter;
@@ -28,7 +31,11 @@ public class ContentListActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_content_list);
+        initView();
 
+    }
+
+    private void initView() {
         listView = (ListView)findViewById(R.id.lv);
         initData();
         adapter = new ContentListAdapter(this,list);
@@ -60,7 +67,6 @@ public class ContentListActivity extends BaseActivity {
     private void initData() {
         list = new ArrayList<>();
         String[] allUserNames = getResources().getStringArray(R.array.arrUsernames);
-        LogUtil.d("initdata-->"+allUserNames.toString());
         for (String allUserName : allUserNames) {
             User user = new User();
             user.setUserName(allUserName);
