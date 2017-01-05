@@ -105,7 +105,9 @@
         <activity android:name=".activity.LeakCanaryActivity" />
         <activity android:name=".activity.HotFixActivity" />
         <activity android:name=".activity.StickyActivity" />
-        <activity android:name=".activity.ContentListActivity"></activity>
+        <activity android:name=".activity.ContentListActivity" />
+        <activity android:name=".activity.EleActivity" />
+        <activity android:name=".activity.EleSearchActivity"></activity>
     </application>
 
 </manifest>

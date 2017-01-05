@@ -39,6 +39,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
+
 public class MainActivity extends BaseActivity {
     //    private String url = "http://op.juhe.cn/shanghai/police?key=4ceeff4e2486d39a40df48f3118e5a9c";
     private String url = "http://www.391k.com/api/xapi.ashx/info.json?key=bd_hyrzjjfb4modhj&size=10&page=1 ";
@@ -240,7 +241,8 @@ public class MainActivity extends BaseActivity {
             new Info("LeakCanary内存泄漏检测", LeakCanaryActivity.class),
             new Info("HotFix修复patch测试", HotFixActivity.class),
             new Info("仿美团滑动Scrollview置顶头部购买布局", StickyActivity.class),
-            new Info("列表通讯录展示页面", ContentListActivity.class)
+            new Info("列表通讯录展示页面", ContentListActivity.class),
+            new Info("仿ele么上拉隐藏滑动", EleActivity.class),
     };
 
     /**

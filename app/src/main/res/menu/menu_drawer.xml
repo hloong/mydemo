@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-<group>
-    <item
-        android:id="@+id/nav_home"
-        android:checkable="true"
-        android:icon="@drawable/abc_ic_ab_back_mtrl_am_alpha"
-        android:title="Home"/>
-    <item
-        android:id="@+id/nav_messages"
-        android:checkable="true"
-        android:icon="@drawable/abc_ic_clear_mtrl_alpha"
-        android:title="Messages"/>
-    <item
-        android:id="@+id/nav_friends"
-        android:checkable="true"
-        android:icon="@drawable/abc_ic_commit_search_api_mtrl_alpha"
-        android:title="Friends"/>
-    <item
-        android:id="@+id/nav_discussion"
-        android:checkable="true"
-        android:icon="@drawable/abc_ic_menu_copy_mtrl_am_alpha"
-        android:title="Discussion"/>
-</group>
+    <group>
+        <item
+            android:id="@+id/nav_home"
+            android:checkable="true"
+            android:icon="@drawable/abc_ic_menu_copy_mtrl_am_alpha"
+            android:title="Home"/>
+        <item
+            android:id="@+id/nav_messages"
+            android:checkable="true"
+            android:icon="@drawable/abc_ic_menu_copy_mtrl_am_alpha"
+            android:title="Messages"/>
+        <item
+            android:id="@+id/nav_friends"
+            android:checkable="true"
+            android:icon="@drawable/abc_ic_commit_search_api_mtrl_alpha"
+            android:title="Friends"/>
+        <item
+            android:id="@+id/nav_discussion"
+            android:checkable="true"
+            android:icon="@drawable/abc_ic_menu_copy_mtrl_am_alpha"
+            android:title="Discussion"/>
+    </group>
 
 <item android:title="Sub items">
     <menu>
         <item
             android:checkable="true"
-            android:icon="@drawable/abc_ic_ab_back_mtrl_am_alpha"
+            android:icon="@drawable/abc_ic_menu_copy_mtrl_am_alpha"
             android:title="Sub item 1"/>
         <item
             android:checkable="true"
-            android:icon="@drawable/abc_ic_menu_moreoverflow_mtrl_alpha"
+            android:icon="@drawable/abc_ic_menu_copy_mtrl_am_alpha"
             android:title="Sub item 2"/>
     </menu>
 </item>
