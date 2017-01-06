@@ -107,7 +107,8 @@
         <activity android:name=".activity.StickyActivity" />
         <activity android:name=".activity.ContentListActivity" />
         <activity android:name=".activity.EleActivity" />
-        <activity android:name=".activity.EleSearchActivity"></activity>
+        <activity android:name=".activity.EleSearchActivity" />
+        <activity android:name=".activity.SphereActivity"></activity>
     </application>
 
 </manifest>

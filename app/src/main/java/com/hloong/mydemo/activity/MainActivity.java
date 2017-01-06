@@ -243,6 +243,7 @@ public class MainActivity extends BaseActivity {
             new Info("仿美团滑动Scrollview置顶头部购买布局", StickyActivity.class),
             new Info("列表通讯录展示页面", ContentListActivity.class),
             new Info("仿ele么上拉隐藏滑动", EleActivity.class),
+            new Info("小球圆周运动demo",SphereActivity.class)
     };
 
     /**

@@ -99,6 +99,7 @@ public class EleSearchActivity extends AppCompatActivity {
         float originY = getIntent().getIntExtra("y", 0);
 
         int location[] = new int[2];
+
         mSearchBGTxt.getLocationOnScreen(location);
 
         final float translateY = originY - (float) location[1];
