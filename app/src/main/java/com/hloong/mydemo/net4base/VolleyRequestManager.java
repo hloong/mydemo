@@ -1,11 +1,14 @@
 package com.hloong.mydemo.net4base;
 
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.JsonRequest;
 import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.hloong.mydemo.App;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -21,7 +24,10 @@ public class VolleyRequestManager implements IRequestManager {
         return instance;
     }
 
+    private static RequestQueue mQueue = Volley.newRequestQueue(App.getInstance().getApplicationContext());
+
     private VolleyRequestManager() {
+        mQueue = Volley.newRequestQueue(App.getInstance().getApplicationContext());
     }
 
     @Override

@@ -16,6 +16,13 @@ public class App extends Application{
     String appVersion;
     String appId = "71316-1";
 
+    public static App instance = new App();
+    public static App getInstance(){
+        return instance;
+    }
+    public App(){
+
+    }
 
     @Override
     public void onCreate() {

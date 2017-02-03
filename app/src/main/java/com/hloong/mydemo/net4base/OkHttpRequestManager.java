@@ -43,7 +43,7 @@ public class OkHttpRequestManager implements IRequestManager{
                 .url(url)
                 .get()
                 .build();
-
+        addCallBack(requestCallback,request);
     }
 
     @Override
@@ -53,6 +53,7 @@ public class OkHttpRequestManager implements IRequestManager{
                 .url(url)
                 .put(body)
                 .build();
+        addCallBack(requestCallback,request);
     }
 
     @Override
@@ -62,6 +63,7 @@ public class OkHttpRequestManager implements IRequestManager{
                 .url(url)
                 .put(body)
                 .build();
+        addCallBack(requestCallback,request);
     }
 
     @Override
@@ -71,6 +73,7 @@ public class OkHttpRequestManager implements IRequestManager{
                 .url(url)
                 .delete(body)
                 .build();
+        addCallBack(requestCallback,request);
     }
 
     private void addCallBack(final IRequestCallback requestCallBack,Request request){

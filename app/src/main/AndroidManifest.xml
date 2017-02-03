@@ -108,7 +108,8 @@
         <activity android:name=".activity.ContentListActivity" />
         <activity android:name=".activity.EleActivity" />
         <activity android:name=".activity.EleSearchActivity" />
-        <activity android:name=".activity.SphereActivity"></activity>
+        <activity android:name=".activity.SphereActivity" />
+        <activity android:name=".activity.BaseNetImageActivity"></activity>
     </application>
 
 </manifest>
