@@ -9,6 +9,9 @@ import com.squareup.leakcanary.LeakCanary;
 import com.taobao.hotfix.HotFixManager;
 import com.taobao.hotfix.NewPatchListener;
 
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
+
 /**
  * Created by Administrator on 2016/6/27.
  */
@@ -38,6 +41,14 @@ public class App extends Application{
         }
 
         HotFixManager.getInstance().initialize(this, appVersion,appId, mNewPatchListener);//阿里百川HotFix初始化
+
+        Realm.init(this);
+        RealmConfiguration configuration = new RealmConfiguration.Builder()
+                .name("hloong.realm")
+                .deleteRealmIfMigrationNeeded()
+                .build();
+        Realm.setDefaultConfiguration(configuration);
+
     }
 
     /**

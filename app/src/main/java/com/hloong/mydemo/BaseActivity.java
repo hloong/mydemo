@@ -18,6 +18,7 @@ import com.hloong.mydemo.util.PhoneInfoUtil;
 
 import java.lang.reflect.Field;
 
+
 public class BaseActivity extends AppCompatActivity {
     private FrameLayout baseContent;
     private Toolbar toolbar_base;
@@ -46,6 +47,9 @@ public class BaseActivity extends AppCompatActivity {
         startActivity(new Intent(this, activity));
     }
 
+    public void setTitle(String title){
+        toolbar_base.setTitle(title);
+    }
     /**
      * 关闭标题栏
      */

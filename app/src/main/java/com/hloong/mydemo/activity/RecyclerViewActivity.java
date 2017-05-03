@@ -48,6 +48,7 @@ public class RecyclerViewActivity extends BaseActivity {
     }
 
     private void initRefresh() {
+
         swipeRefreshLayout.setProgressBackgroundColorSchemeResource(android.R.color.white);
         swipeRefreshLayout.setColorSchemeResources(
                 android.R.color.holo_blue_bright,

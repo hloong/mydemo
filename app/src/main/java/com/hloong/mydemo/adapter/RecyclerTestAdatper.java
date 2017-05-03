@@ -18,7 +18,16 @@ import java.util.List;
 public class RecyclerTestAdatper extends RecyclerView.Adapter<RecyclerTestAdatper.ViewHolder> {
     private LayoutInflater inflater;
     private List<String> data = new ArrayList<String>();
-
+    //上拉加载更多
+    public static final int  PULLUP_LOAD_MORE=0;
+    //正在加载中
+    public static final int  LOADING_MORE=1;
+    //上拉加载更多状态-默认为0
+    private int load_more_status=0;
+    private LayoutInflater mInflater;
+    private List<String> mTitles=null;
+    private static final int TYPE_ITEM=0;  //普通Item View
+    private static final int TYPE_FOOTER=1;  //顶部FootView
     public RecyclerTestAdatper(Context context){
         inflater = LayoutInflater.from(context);
         for (int i = 0; i < 10; i++) {

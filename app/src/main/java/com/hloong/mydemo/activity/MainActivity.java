@@ -244,7 +244,8 @@ public class MainActivity extends BaseActivity {
             new Info("列表通讯录展示页面", ContentListActivity.class),
             new Info("仿ele么上拉隐藏滑动", EleActivity.class),
             new Info("小球圆周运动demo",SphereActivity.class),
-            new Info("简单工厂模式封装图片和网络请求框架",BaseNetImageActivity.class)
+            new Info("简单工厂模式封装图片和网络请求框架",BaseNetImageActivity.class),
+            new Info("Realm数据库demo",RealmDbDemoActivity.class),
     };
 
     /**

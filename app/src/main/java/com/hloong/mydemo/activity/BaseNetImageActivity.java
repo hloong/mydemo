@@ -11,6 +11,8 @@ import com.hloong.mydemo.image4base.ImageRequestManager;
 import com.hloong.mydemo.net4base.IRequestCallback;
 import com.hloong.mydemo.net4base.RequestFactory;
 
+
+
 /**
  * 简单工厂模式下的图片加载框架，和网络加载框架示例
  */
@@ -29,6 +31,7 @@ public class BaseNetImageActivity extends AppCompatActivity {
         image = (ImageView) findViewById(R.id.image);
         String img="https://img6.bdstatic.com/img/image/smallpic/weiju112.jpg";
         String url = "https://api.douban.com/v2/movie/top250";
+
         RequestFactory.getRequestManager().get(url, new IRequestCallback() {
             @Override
             public void onSuccess(String response) {
