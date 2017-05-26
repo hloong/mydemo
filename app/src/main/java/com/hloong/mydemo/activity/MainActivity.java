@@ -237,7 +237,7 @@ public class MainActivity extends BaseActivity {
             new Info("DragViewHelper示例代码", DragViewActivity.class),
             new Info("FlowLayout流式布局", FlowActivity.class),
             new Info("复杂的FlowLayout流式布局", TabFlowActivity.class),
-            new Info("AIDL简单实例，跳转到另外一个aidl_server", AidlActivity.class),
+//            new Info("AIDL简单实例，跳转到另外一个aidl_server", AidlActivity.class),
             new Info("LeakCanary内存泄漏检测", LeakCanaryActivity.class),
             new Info("HotFix修复patch测试", HotFixActivity.class),
             new Info("仿美团滑动Scrollview置顶头部购买布局", StickyActivity.class),
@@ -246,6 +246,8 @@ public class MainActivity extends BaseActivity {
             new Info("小球圆周运动demo",SphereActivity.class),
             new Info("简单工厂模式封装图片和网络请求框架",BaseNetImageActivity.class),
             new Info("Realm数据库demo",RealmDbDemoActivity.class),
+            new Info("流式布局",TagFlowActivity.class),
+            new Info("自定义scrollview不拦截里面的listview，解决滑动冲动",CoustomUiActivity.class),
     };
 
     /**

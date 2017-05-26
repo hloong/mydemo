@@ -111,7 +111,7 @@
         <activity android:name=".activity.SphereActivity" />
         <activity android:name=".activity.BaseNetImageActivity" />
         <activity android:name=".activity.XRefreshViewActivity" />
-        <activity android:name=".activity.RealmDbDemoActivity"></activity>
+        <activity android:name=".activity.RealmDbDemoActivity" />
         <activity android:name=".activity.realmdemo.AddStudentActivity" />
         <activity android:name=".activity.realmdemo.DeleteStudentActivity" />
         <activity android:name=".activity.realmdemo.QueryStudentActivity" />
@@ -121,6 +121,8 @@
         <activity
             android:name=".activity.Student.QueryStudentActivity"
             android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".activity.TagFlowActivity" />
+        <activity android:name=".activity.CoustomUiActivity"></activity>
     </application>
 
 </manifest>
