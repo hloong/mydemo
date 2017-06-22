@@ -123,6 +123,7 @@
             android:windowSoftInputMode="stateHidden" />
         <activity android:name=".activity.TagFlowActivity" />
         <activity android:name=".activity.CoustomUiActivity"></activity>
+        <activity android:name=".activity.SplashActivity"></activity>
     </application>
 
 </manifest>
